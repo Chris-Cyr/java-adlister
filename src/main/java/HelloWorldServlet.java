@@ -5,12 +5,19 @@ import javax.servlet.http.*;
 
 @WebServlet(name = "HelloWorldServlet", urlPatterns = "/")
 public class HelloWorldServlet extends HttpServlet {
-
+    int count = 0;
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
+    count++;
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println("<h1>Hello, World!</h1>");
-    }
+        String name = request.getParameter("name");
+        if(name == null){
+            name = "World";
+        }
+        System.out.println(name);
+        response.getWriter().println("<h1>Hello " + name + "!</h1>");
+        response.getWriter().println("<p>Page visits = " + count + "</p>");
 
+
+}
 }
