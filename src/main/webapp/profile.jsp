@@ -8,10 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
-    <h1>Profile Landing Page</h1>
+    <jsp:include page="partials/head.jsp"></jsp:include>
+
 </head>
 <body>
-
+    <jsp:include page="partials/navbar.jsp"></jsp:include>
+   <h1>Profile Landing Page</h1>
 </body>
 </html>
